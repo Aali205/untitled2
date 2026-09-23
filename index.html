@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chocola Teno — شوكولا تينو | Luxury Chocolate</title>
+  <meta name="description" content="Chocola Teno — handcrafted luxury chocolate, gift trays, dragées and Coffee Teno. Damascus · Lattakia · Muscat · Venlo." />
+  <meta name="theme-color" content="#1a0f0a" />
+  <link rel="icon" type="image/png" href="/img/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600&family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- Brand mark (re-used via <use>) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3e2b3" />
+      <stop offset=".45" stop-color="#c9a45c" />
+      <stop offset="1" stop-color="#8a6a2f" />
+    </linearGradient>
+    <symbol id="mark" viewBox="0 0 100 100">
+      <path class="m-petals" d="M50 22 C56 8 70 22 80 20 C78 30 92 44 78 50 C92 56 78 70 80 80 C70 78 56 92 50 78 C44 92 30 78 20 80 C22 70 8 56 22 50 C8 44 22 30 20 20 C30 22 44 8 50 22 Z" fill="none" stroke="url(#gold)" stroke-width="1.6" />
+      <path class="m-diamond" d="M50 22 L78 50 L50 78 L22 50 Z" fill="none" stroke="url(#gold)" stroke-width="1.2" />
+      <rect class="m-square" x="38" y="38" width="24" height="24" fill="none" stroke="url(#gold)" stroke-width="1" />
+      <text x="50" y="56.5" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="17" font-style="italic" fill="url(#gold)">CT</text>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- Preloader -->
+<div class="loader" id="loader">
+  <svg class="loader-mark" viewBox="0 0 100 100">
+    <path class="lp" d="M50 22 C56 8 70 22 80 20 C78 30 92 44 78 50 C92 56 78 70 80 80 C70 78 56 92 50 78 C44 92 30 78 20 80 C22 70 8 56 22 50 C8 44 22 30 20 20 C30 22 44 8 50 22 Z" />
+    <path class="lp" d="M50 22 L78 50 L50 78 L22 50 Z" />
+    <rect class="lp" x="38" y="38" width="24" height="24" />
+    <text class="lt" x="50" y="56.5" text-anchor="middle">CT</text>
+  </svg>
+  <div class="loader-word"><span>Chocola</span><em>Teno</em></div>
+  <div class="loader-bar"><i id="loaderBar"></i></div>
+</div>
+
+<div class="cursor" aria-hidden="true"><span class="cursor-dot"></span><span class="cursor-ring"><b class="cursor-label"></b></span></div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- Header -->
+<header class="nav" id="nav">
+  <a href="#top" class="brand" aria-label="Chocola Teno">
+    <svg class="brand-mark"><use href="#mark" /></svg>
+    <span class="brand-name">Chocola<em>Teno</em></span>
+  </a>
+  <nav class="nav-links">
+    <a href="#story" data-i18n="nav.story">Our Story</a>
+    <a href="#collections" data-i18n="nav.collections">Collections</a>
+    <a href="#coffee" data-i18n="nav.coffee">Coffee Teno</a>
+    <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
+    <a href="#boutiques" data-i18n="nav.boutiques">Boutiques</a>
+  </nav>
+  <div class="nav-actions">
+    <button class="lang" id="langToggle" type="button" aria-label="Switch language">عربي</button>
+    <a href="#order" class="btn btn-small magnetic" data-i18n="nav.order">Order</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="menu" id="menu">
+  <a href="#story" data-i18n="nav.story">Our Story</a>
+  <a href="#collections" data-i18n="nav.collections">Collections</a>
+  <a href="#coffee" data-i18n="nav.coffee">Coffee Teno</a>
+  <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
+  <a href="#boutiques" data-i18n="nav.boutiques">Boutiques</a>
+  <a href="#order" data-i18n="nav.order">Order</a>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <canvas class="hero-canvas" id="goldDust"></canvas>
+    <svg class="drip" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+      <path id="dripPath" fill="#2a170f" d="" />
+    </svg>
+
+    <div class="hero-inner">
+      <p class="eyebrow hero-reveal"><span class="line"></span><span data-i18n="hero.eyebrow">Luxury chocolatier · Damascus</span></p>
+      <h1 class="hero-title">
+        <span class="row"><span class="word" data-i18n="hero.t1">The Art</span></span>
+        <span class="row"><span class="word italic gold-text" data-i18n="hero.t2">of Fine</span></span>
+        <span class="row"><span class="word" data-i18n="hero.t3">Chocolate</span></span>
+      </h1>
+      <p class="hero-sub hero-reveal" data-i18n="hero.sub">Hand-finished truffles, couture gift trays and Syrian dragées — made to be given, remembered and savoured.</p>
+      <div class="hero-cta hero-reveal">
+        <a href="#collections" class="btn magnetic"><span data-i18n="hero.cta1">Discover the collection</span></a>
+        <a href="#order" class="btn btn-ghost magnetic"><span data-i18n="hero.cta2">Order a gift</span></a>
+      </div>
+    </div>
+
+    <div class="hero-stage" aria-hidden="true">
+      <div class="hero-halo"></div>
+      <figure class="hero-card hc-1" data-depth="0.6"><img src="/img/ig/p03.jpg" alt="" /></figure>
+      <figure class="hero-card hc-2" data-depth="1.2"><img src="/img/ig/p01.jpg" alt="" /></figure>
+      <figure class="hero-card hc-3" data-depth="0.9"><img src="/img/ig/p02.jpg" alt="" /></figure>
+      <svg class="hero-ring" viewBox="0 0 200 200">
+        <defs><path id="circ" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0" /></defs>
+        <text><textPath href="#circ">CHOCOLA TENO • LUXURY CHOCOLATE • DAMASCUS • </textPath></text>
+      </svg>
+    </div>
+
+    <a href="#story" class="scroll-hint" aria-label="Scroll"><span></span></a>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Truffles</span><i>✦</i><span>شوكولا</span><i>✦</i><span>Gift Trays</span><i>✦</i><span>ملبّس</span><i>✦</i><span>Dragées</span><i>✦</i><span>Coffee Teno</span><i>✦</i><span>Weddings</span><i>✦</i><span>ضيافة</span><i>✦</i>
+      <span>Truffles</span><i>✦</i><span>شوكولا</span><i>✦</i><span>Gift Trays</span><i>✦</i><span>ملبّس</span><i>✦</i><span>Dragées</span><i>✦</i><span>Coffee Teno</span><i>✦</i><span>Weddings</span><i>✦</i><span>ضيافة</span><i>✦</i>
+    </div>
+  </div>
+
+  <!-- STORY -->
+  <section class="story" id="story">
+    <div class="story-media">
+      <div class="story-img si-1"><img src="/img/ig/p09.jpg" alt="Chocola Teno large chocolate tray" loading="lazy" /></div>
+      <div class="story-img si-2"><img src="/img/ig/p08.jpg" alt="Gold gift tins" loading="lazy" /></div>
+      <svg class="story-mark"><use href="#mark" /></svg>
+    </div>
+    <div class="story-text">
+      <p class="eyebrow"><span class="line"></span><span data-i18n="story.eyebrow">Our Story</span></p>
+      <h2 class="split" data-i18n="story.title">Where Damascene hospitality meets the patience of the chocolatier.</h2>
+      <p class="fade-up" data-i18n="story.p1">Chocola Teno was born in Damascus with a simple belief: a piece of chocolate is a gesture. Every truffle is rolled, enrobed and wrapped by hand, then dressed in satin ribbon and gold — because in our culture, how you give matters as much as what you give.</p>
+      <p class="fade-up" data-i18n="story.p2">Today our boutiques carry that spirit from the streets of Al-Maliki and Mezzeh to Lattakia, Muscat and the Netherlands — the same recipes, the same care, the same smile at the door.</p>
+      <div class="stats">
+        <div class="stat"><b class="count" data-to="41.7" data-dec="1">0</b><span>K</span><small data-i18n="stats.followers">Instagram family</small></div>
+        <div class="stat"><b class="count" data-to="3">0</b><small data-i18n="stats.countries">Countries</small></div>
+        <div class="stat"><b class="count" data-to="6">0</b><span>+</span><small data-i18n="stats.boutiques">Boutiques</small></div>
+        <div class="stat"><b class="count" data-to="544">0</b><small data-i18n="stats.creations">Creations shared</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTIONS: horizontal pinned scroll -->
+  <section class="collections" id="collections">
+    <div class="col-head">
+      <p class="eyebrow"><span class="line"></span><span data-i18n="col.eyebrow">The Collections</span></p>
+      <h2 class="split" data-i18n="col.title">Crafted for every moment worth celebrating</h2>
+    </div>
+    <div class="col-pin" dir="ltr">
+      <div class="col-track">
+        <article class="product" data-cursor="View">
+          <div class="p-img"><img src="/img/ig/p03.jpg" alt="Hazelnut chocolate truffle" loading="lazy" /></div>
+          <div class="p-meta"><span class="p-num">01</span><h3 data-i18n="p1.t">Noisette Truffle</h3><p data-i18n="p1.d">Whole roasted hazelnut, gianduja heart, shaved dark chocolate shell.</p></div>
+        </article>
+        <article class="product" data-cursor="View">
+          <div class="p-img"><img src="/img/ig/p02.jpg" alt="Coconut white truffle" loading="lazy" /></div>
+          <div class="p-meta"><span class="p-num">02</span><h3 data-i18n="p2.t">Coconut Snow</h3><p data-i18n="p2.d">Crisp wafer, silky white cream and toasted coconut flakes.</p></div>
+        </article>
+        <article class="product" data-cursor="View">
+          <div class="p-img"><img src="/img/ig/p01.jpg" alt="Luxury gift tray with roses" loading="lazy" /></div>
+          <div class="p-meta"><span class="p-num">03</span><h3 data-i18n="p3.t">Couture Gift Trays</h3><p data-i18n="p3.d">Curated assortments dressed with fresh roses — made to order.</p></div>
+        </article>
+        <article class="product" data-cursor="View">
+          <div class="p-img"><img src="/img/ig/p07.jpg" alt="Sugared almonds in crystal jar" loading="lazy" /></div>
+          <div class="p-meta"><span class="p-num">04</span><h3 data-i18n="p4.t">Mlabbas Dragées</h3><p data-i18n="p4.d">Classic Syrian sugared almonds for weddings and new beginnings.</p></div>
+        </article>
+        <article class="product" data-cursor="View">
+          <div class="p-img"><img src="/img/ig/p06.jpg" alt="Wooden boxes of chocolate dragées" loading="lazy" /></div>
+          <div class="p-meta"><span class="p-num">05</span><h3 data-i18n="p5.t">Oak Treasure Boxes</h3><p data-i18n="p5.d">Chocolate-coated nuts & coffee beans in hand-tied wooden cases.</p></div>
+        </article>
+        <article class="product" data-cursor="View">
+          <div class="p-img"><img src="/img/ig/p13.jpg" alt="Ruby chocolate bar" loading="lazy" /></div>
+          <div class="p-meta"><span class="p-num">06</span><h3 data-i18n="p6.t">Ruby & Crunch Bars</h3><p data-i18n="p6.d">Fruity ruby cacao layered with praline crunch and pistachio.</p></div>
+        </article>
+        <article class="product" data-cursor="View">
+          <div class="p-img"><img src="/img/ig/p04.jpg" alt="Glass serving dishes with wrapped chocolates" loading="lazy" /></div>
+          <div class="p-meta"><span class="p-num">07</span><h3 data-i18n="p7.t">Crystal Hospitality</h3><p data-i18n="p7.d">Wrapped signature pieces in glass tiers — ready for your guests.</p></div>
+        </article>
+        <div class="col-end">
+          <p data-i18n="col.end">Every piece can be personalised with your names, date & colours.</p>
+          <a href="#order" class="btn magnetic" data-i18n="col.endcta">Design your tray</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-progress"><i></i></div>
+  </section>
+
+  <!-- SIGNATURE REVEAL -->
+  <section class="signature" id="signature">
+    <div class="sig-sticky">
+      <div class="sig-img"><img src="/img/ig/p09.jpg" alt="Chocola Teno signature assortment" loading="lazy" /></div>
+      <div class="sig-copy">
+        <p class="eyebrow light"><span class="line"></span><span data-i18n="sig.eyebrow">Signature</span></p>
+        <h2 data-i18n="sig.title">The Grand Tray</h2>
+        <p data-i18n="sig.p">Over a hundred hand-wrapped pieces in a leather-bound tray — our most loved centrepiece for engagements, Eid and grand openings.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COFFEE TENO -->
+  <section class="coffee" id="coffee">
+    <div class="coffee-head">
+      <p class="eyebrow"><span class="line"></span><span>Coffee Teno</span></p>
+      <h2 class="split" data-i18n="coffee.title">A café inside the chocolatier</h2>
+      <p class="fade-up" data-i18n="coffee.p">Pair your chocolate with a velvet cappuccino, a peach iced tea or our caramel soft-serve — served at the bar in every Coffee Teno corner.</p>
+    </div>
+    <div class="coffee-grid">
+      <figure class="cup tilt" data-cursor="Sip"><img src="/img/ig/p12.jpg" alt="Cappuccino from Coffee Teno" loading="lazy" /><figcaption><b>Cappuccino</b><span data-i18n="coffee.c1">Double shot · latte art</span></figcaption></figure>
+      <figure class="cup tilt" data-cursor="Sip"><img src="/img/ig/p11.jpg" alt="Peach ice tea" loading="lazy" /><figcaption><b>Ice Tea</b><span data-i18n="coffee.c2">Fresh peach · brewed daily</span></figcaption></figure>
+      <figure class="cup tilt" data-cursor="Taste"><img src="/img/ig/p05.jpg" alt="Caramel soft-serve ice cream" loading="lazy" /><figcaption><b>Soft-Serve</b><span data-i18n="coffee.c3">Salted caramel swirl</span></figcaption></figure>
+    </div>
+  </section>
+
+  <!-- OCCASIONS -->
+  <section class="occasions">
+    <p class="eyebrow center"><span class="line"></span><span data-i18n="occ.eyebrow">Occasions</span><span class="line"></span></p>
+    <h2 class="split center" data-i18n="occ.title">For the moments you'll tell stories about</h2>
+    <div class="occ-list">
+      <a href="#order" class="occ" data-img="/img/ig/p07.jpg"><span class="occ-n">I</span><span class="occ-t" data-i18n="occ.1">Weddings & Engagements</span><span class="occ-a">→</span></a>
+      <a href="#order" class="occ" data-img="/img/ig/p10.jpg"><span class="occ-n">II</span><span class="occ-t" data-i18n="occ.2">Ramadan, Eid & Mawlid</span><span class="occ-a">→</span></a>
+      <a href="#order" class="occ" data-img="/img/ig/p08.jpg"><span class="occ-n">III</span><span class="occ-t" data-i18n="occ.3">Births & Baby Showers</span><span class="occ-a">→</span></a>
+      <a href="#order" class="occ" data-img="/img/ig/p06.jpg"><span class="occ-n">IV</span><span class="occ-t" data-i18n="occ.4">Corporate Gifting</span><span class="occ-a">→</span></a>
+    </div>
+    <div class="occ-preview" aria-hidden="true"><img src="/img/ig/p07.jpg" alt="" /></div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="gal-head">
+      <p class="eyebrow"><span class="line"></span><span data-i18n="gal.eyebrow">From our atelier</span></p>
+      <h2 class="split" data-i18n="gal.title">Freshly unwrapped</h2>
+      <a class="ig-link" href="https://www.instagram.com/chocola_teno/" target="_blank" rel="noopener">@chocola_teno ↗</a>
+    </div>
+    <div class="gal-grid">
+      <button class="g g-tall" data-cursor="Open"><img src="/img/ig/p01.jpg" alt="Gift tray with purple roses" loading="lazy" /></button>
+      <button class="g" data-cursor="Open"><img src="/img/ig/p02.jpg" alt="Coconut truffle" loading="lazy" /></button>
+      <button class="g" data-cursor="Open"><img src="/img/ig/p05.jpg" alt="Soft-serve ice cream" loading="lazy" /></button>
+      <button class="g g-tall" data-cursor="Open"><img src="/img/ig/p10.jpg" alt="Mawlid celebration chocolates" loading="lazy" /></button>
+      <button class="g" data-cursor="Open"><img src="/img/ig/p04.jpg" alt="Wrapped chocolates in glass tiers" loading="lazy" /></button>
+      <button class="g" data-cursor="Open"><img src="/img/ig/p08.jpg" alt="Gold gift tins" loading="lazy" /></button>
+      <button class="g g-wide" data-cursor="Open"><img src="/img/ig/p09.jpg" alt="Grand chocolate tray" loading="lazy" /></button>
+      <button class="g" data-cursor="Open"><img src="/img/ig/p11.jpg" alt="Ice tea" loading="lazy" /></button>
+      <button class="g" data-cursor="Open"><img src="/img/ig/p13.jpg" alt="Ruby chocolate bars" loading="lazy" /></button>
+    </div>
+  </section>
+
+  <!-- BOUTIQUES -->
+  <section class="boutiques" id="boutiques">
+    <div class="bq-head">
+      <p class="eyebrow light"><span class="line"></span><span data-i18n="bq.eyebrow">Boutiques</span></p>
+      <h2 class="split" data-i18n="bq.title">Visit us around the world</h2>
+    </div>
+    <div class="bq-map" aria-hidden="true">
+      <svg viewBox="0 0 800 380" class="routes">
+        <path class="route" d="M470 190 Q 420 90 330 70" />
+        <path class="route" d="M470 190 Q 540 250 600 262" />
+        <path class="route" d="M470 190 Q 468 180 462 176" />
+        <g class="pin" transform="translate(470 190)"><circle r="18" class="pulse" /><circle r="5" /></g>
+        <g class="pin" transform="translate(462 176)"><circle r="4" /></g>
+        <g class="pin" transform="translate(330 70)"><circle r="14" class="pulse" /><circle r="4" /></g>
+        <g class="pin" transform="translate(600 262)"><circle r="14" class="pulse" /><circle r="4" /></g>
+        <text x="484" y="206">Damascus</text><text x="398" y="170">Lattakia</text><text x="282" y="56">Venlo</text><text x="612" y="282">Muscat</text>
+      </svg>
+    </div>
+    <div class="bq-grid">
+      <article class="bq">
+        <span class="bq-c" data-i18n="bq.sy">Syria · Damascus</span>
+        <h3 data-i18n="bq.malki">Al-Maliki</h3><p data-i18n="bq.malki.a">Abdel Moneim Riad Street</p>
+      </article>
+      <article class="bq">
+        <span class="bq-c" data-i18n="bq.sy">Syria · Damascus</span>
+        <h3 data-i18n="bq.mezzeh">Mezzeh</h3><p data-i18n="bq.mezzeh.a">Mezzeh Autostrad</p>
+      </article>
+      <article class="bq">
+        <span class="bq-c" data-i18n="bq.sy">Syria · Damascus</span>
+        <h3 data-i18n="bq.mazraa">Al-Mazraa</h3><p data-i18n="bq.mazraa.a">Near Al-Iman Mosque</p>
+      </article>
+      <article class="bq">
+        <span class="bq-c" data-i18n="bq.sy">Syria · Damascus</span>
+        <h3 data-i18n="bq.dummar">Dummar Project</h3><p data-i18n="bq.dummar.a">Mashrou' Dummar</p>
+      </article>
+      <article class="bq">
+        <span class="bq-c" data-i18n="bq.sy2">Syria</span>
+        <h3 data-i18n="bq.lat">Lattakia</h3><p data-i18n="bq.lat.a">Coastal boutique</p>
+      </article>
+      <article class="bq">
+        <span class="bq-c" data-i18n="bq.om">Sultanate of Oman</span>
+        <h3 data-i18n="bq.muscat">Oman</h3><p><a href="https://www.instagram.com/chocolateno.om/" target="_blank" rel="noopener">@chocolateno.om ↗</a></p>
+      </article>
+      <article class="bq">
+        <span class="bq-c" data-i18n="bq.nl">Netherlands</span>
+        <h3 data-i18n="bq.venlo">Venlo</h3><p><a href="https://www.instagram.com/chocola.teno.nl/" target="_blank" rel="noopener">@chocola.teno.nl ↗</a></p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ORDER CTA -->
+  <section class="order" id="order">
+    <div class="order-bg"><img src="/img/ig/p01.jpg" alt="" loading="lazy" /></div>
+    <div class="order-inner">
+      <svg class="order-mark"><use href="#mark" /></svg>
+      <h2 class="split center" data-i18n="order.title">Let's create something sweet together</h2>
+      <p class="fade-up" data-i18n="order.p">Tell us the occasion, the number of guests and your colours — we'll design a tray that feels like you.</p>
+      <div class="order-cta fade-up">
+        <a class="btn magnetic" href="https://wa.me/963995856776" target="_blank" rel="noopener"><span data-i18n="order.wa">Order on WhatsApp</span></a>
+        <a class="btn btn-ghost light magnetic" href="tel:+963995856776" dir="ltr">+963 995 856 776</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="f-top">
+    <a href="#top" class="brand big"><svg class="brand-mark"><use href="#mark" /></svg><span class="brand-name">Chocola<em>Teno</em></span></a>
+    <p class="f-ar">شوكولا تينو</p>
+  </div>
+  <div class="f-cols">
+    <div><h4 data-i18n="f.follow">Follow</h4>
+      <a href="https://www.instagram.com/chocola_teno/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/ChocolaTenoSyria/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://t.me/chocoteno" target="_blank" rel="noopener">Telegram</a>
+    </div>
+    <div><h4 data-i18n="f.visit">Visit</h4>
+      <a href="#boutiques" data-i18n="bq.malki">Al-Maliki</a><a href="#boutiques" data-i18n="bq.mezzeh">Mezzeh</a><a href="#boutiques" data-i18n="bq.mazraa">Al-Mazraa</a>
+    </div>
+    <div><h4 data-i18n="f.contact">Contact</h4>
+      <a href="tel:+963995856776" dir="ltr">+963 995 856 776</a>
+      <a href="https://wa.me/963995856776" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+  <div class="f-bottom"><span>© <span id="year"></span> Chocola Teno</span><span data-i18n="f.made">Made with cacao & care</span></div>
+</footer>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lb-close" aria-label="Close">×</button>
+  <button class="lb-nav lb-prev" aria-label="Previous">‹</button>
+  <img alt="" />
+  <button class="lb-nav lb-next" aria-label="Next">›</button>
+</div>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
